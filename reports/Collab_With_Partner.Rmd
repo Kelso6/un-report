@@ -10,3 +10,15 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
+```{r}
+library(tidyverse)
+gapminder <- read_csv(file = "../gapminder_data.csv")
+```
+```{r}
+ggplot(gapminder) + 
+  aes(x=year, y=pop, color=continent) + 
+  geom_point() + 
+  facet_wrap(vars(continent))
+```
+
+
